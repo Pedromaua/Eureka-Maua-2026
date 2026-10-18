@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EUREKA MAUÁ 2026</title>
+<meta name="description" content="TCC: Análise de conversão das filiais terceirizadas para um operador logístico Alpha no âmbito nacional. Orientadora: Joyce Zampirolli Scrivano.">
+<meta property="og:title" content="EUREKA MAUÁ 2026">
+<meta property="og:description" content="Análise de conversão das filiais terceirizadas para um operador logístico Alpha no âmbito nacional.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: faixa escura com o título do evento e uma rede hub-and-spoke (operador Alpha e filiais), depois uma coluna única de leitura: tema, orientadora, integrantes com botão de LinkedIn. */
+:root {
+  color-scheme: light;
+  --bg: #f2f5f9;
+  --surface: #ffffff;
+  --fg: #0d1b2e;
+  --muted: #4f5f78;
+  --line: #d5dde9;
+  --accent: #a64a07;
+  --band-bg: #0d1b2e;
+  --band-fg: #eef3fa;
+  --band-muted: #9fb0c9;
+  --band-accent: #f5a524;
+  --btn-bg: #0d1b2e;
+  --btn-fg: #ffffff;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #09111d;
+    --surface: #101c2e;
+    --fg: #e8eef7;
+    --muted: #9aaac2;
+    --line: #22334f;
+    --accent: #f5a524;
+    --band-bg: #0f1c31;
+    --band-fg: #eef3fa;
+    --band-muted: #9fb0c9;
+    --band-accent: #f5a524;
+    --btn-bg: #e8eef7;
+    --btn-fg: #09111d;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Faixa do evento */
+.band {
+  background: var(--band-bg);
+  color: var(--band-fg);
+  padding-block: 28px 20px;
+}
+.event {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 9vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.network {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+}
+.network .spoke { stroke: var(--band-muted); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+.network .node { fill: var(--band-bg); stroke: var(--band-fg); stroke-width: 1.5; }
+.network .hub { fill: var(--band-accent); }
+.network .hub-label { fill: var(--band-bg); font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.08em; }
+
+/* Conteúdo */
+main { padding-block: 32px 48px; display: flex; flex-direction: column; gap: 32px; }
+.label {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5.6vw, 2.15rem);
+  line-height: 1.18;
+  text-wrap: balance;
+}
+.advisor-name { margin: 0; font-size: 1.15rem; font-weight: 500; }
+
+.team { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.member {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding-block: 12px;
+  border-top: 1px solid var(--line);
+}
+.member-name { min-width: 0; font-weight: 500; overflow-wrap: anywhere; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.85; }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="event">EUREKA MAUÁ 2026</p>
+    <svg class="network" viewBox="0 0 320 84" role="img" aria-label="Rede de filiais ligadas a um operador logístico central">
+      <g class="spoke-group">
+        <line class="spoke" x1="160" y1="42" x2="14" y2="16"/>
+        <line class="spoke" x1="160" y1="42" x2="58" y2="68"/>
+        <line class="spoke" x1="160" y1="42" x2="104" y2="12"/>
+        <line class="spoke" x1="160" y1="42" x2="112" y2="72"/>
+        <line class="spoke" x1="160" y1="42" x2="216" y2="10"/>
+        <line class="spoke" x1="160" y1="42" x2="222" y2="74"/>
+        <line class="spoke" x1="160" y1="42" x2="270" y2="20"/>
+        <line class="spoke" x1="160" y1="42" x2="306" y2="62"/>
+      </g>
+      <circle class="node" cx="14" cy="16" r="4"/>
+      <circle class="node" cx="58" cy="68" r="4"/>
+      <circle class="node" cx="104" cy="12" r="4"/>
+      <circle class="node" cx="112" cy="72" r="4"/>
+      <circle class="node" cx="216" cy="10" r="4"/>
+      <circle class="node" cx="222" cy="74" r="4"/>
+      <circle class="node" cx="270" cy="20" r="4"/>
+      <circle class="node" cx="306" cy="62" r="4"/>
+      <circle class="hub" cx="160" cy="42" r="19"/>
+      <text class="hub-label" x="160" y="45" text-anchor="middle">ALPHA</text>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <p class="label">Trabalho de Conclusão de Curso</p>
+    <h1>Análise de conversão das filiais terceirizadas para um operador logístico Alpha no âmbito nacional</h1>
+  </section>
+
+  <section>
+    <p class="label">Orientadora</p>
+    <p class="advisor-name">Joyce Zampirolli Scrivano</p>
+  </section>
+
+  <section>
+    <p class="label">Integrantes</p>
+    <ul class="team">
+      <li class="member">
+        <span class="member-name">Gabriel Pinheiro Lobo Braga</span>
+        <a class="btn" href="https://www.linkedin.com/in/gabriel-pinheiro-8098b42a5" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="member">
+        <span class="member-name">Gabriella Zan Silva</span>
+        <a class="btn" href="https://wa.me/5511997373675" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="member">
+        <span class="member-name">João Victor Lourenço de Almeida Pereira</span>
+        <a class="btn" href="https://www.linkedin.com/in/jo%C3%A3o-victor-louren%C3%A7o-pereira/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="member">
+        <span class="member-name">Pedro Augusto Dias Agati</span>
+        <a class="btn" href="https://www.linkedin.com/in/pedro-agati/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+</body>
+</html>
